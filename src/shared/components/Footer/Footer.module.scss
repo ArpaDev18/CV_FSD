@@ -1,0 +1,30 @@
+@import '../../styles/variables';
+
+.footer {
+  background: #222;
+  color: $white;
+  padding: 40px 20px;
+  font-size: 16px;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .branding {
+    margin-bottom: 16px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #bbb;
+    }
+  }
+}

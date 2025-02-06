@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 32px;
+  background-color: $dark-bg;
+  border-bottom: 2px solid $primary-color;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: $white;
+  }
+
+  .nav {
+    display: flex;
+    gap: 12px;
+
+    button {
+      text-decoration: none;
+      color: $white;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: 0.3s ease;
+      background-color: transparent;
+
+      &:hover,
+      &.active {
+        background-color: $white;
+        color: black;
+      }
+    }
+  }
+}
