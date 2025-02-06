@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.scss'
-import Contacts from '../Contacts/Contacts.tsx'
+import Contacts from '../../../widgets/Contacts/Contacts.tsx'
 
 const Footer: React.FC = () => {
 	return (

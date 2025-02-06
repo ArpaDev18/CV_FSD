@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from './ContactPopup.module.scss'
 import { FaTimes } from 'react-icons/fa'
-import Contacts from '../Contacts/Contacts.tsx'
+import Contacts from '../../../widgets/Contacts/Contacts.tsx'
 
 interface ContactPopupProps {
 	isOpen: boolean

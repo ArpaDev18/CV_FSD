@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './WorkExperienceSection.module.scss'
-import { useAppearance } from '../../shared/hooks/useAppearance.tsx'
 import { WORK_EXPERIENCE } from '../../shared/constants/common.ts'
 
 const WorkExperienceSection: React.FC = () => {
-	const { sectionRef, isVisible } = useAppearance()
+	const [isVisible, setIsVisible] = useState(false)
+	const sectionRef = useRef<HTMLElement>(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setIsVisible(true)
+					observer.disconnect()
+				}
+			},
+			{ threshold: 0.1 }
+		)
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current)
+		}
+
+		return () => observer.disconnect()
+	}, [])
 
 	return (
 		<section
