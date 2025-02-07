@@ -9,7 +9,7 @@ const DownloadButton: React.FC = () => {
 
 	const handleClose = () => {
 		setIsClosing(true)
-		setTimeout(() => setIsVisible(false), 1000) // Убираем кнопку после анимации
+		setTimeout(() => setIsVisible(false), 1000)
 	}
 
 	if (!isVisible) return null
@@ -19,14 +19,14 @@ const DownloadButton: React.FC = () => {
 			<div className={styles.rope}></div>
 
 			<div className={styles.buttonWrapper}>
+				<button className={styles.closeButton} onClick={handleClose}>
+					<IoCloseSharp />
+				</button>
 				<a
 					href='/Aleksanian_Arpine_CV.pdf'
 					download='Arpine_Aleksanian_CV.pdf'
 					className={styles.downloadButton}
 				>
-					<button className={styles.closeButton} onClick={handleClose}>
-						<IoCloseSharp />
-					</button>
 					<FaDownload /> Download PDF
 				</a>
 			</div>
