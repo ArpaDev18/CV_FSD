@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000;
+  z-index: 20000;
 }
 
 .popup {
@@ -21,6 +21,7 @@
   text-align: center;
   position: relative;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  z-index: 200000;
 }
 
 h2 {

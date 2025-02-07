@@ -44,7 +44,7 @@ const OfferingsSection: React.FC = () => {
 			className={`${styles.offeringsSection} ${isVisible ? styles.visible : ''}`}
 		>
 			<div className={styles.header}>
-				<h2>Discover our offerings</h2>
+				<h2>Discover my offerings</h2>
 				<button className={styles.exploreButton} onClick={handleExploreClick}>
 					Explore
 				</button>
