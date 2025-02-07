@@ -6,11 +6,11 @@ import DownloadButton from '../../../widgets/DownloadButton/DownloadButton.tsx'
 import { useDeviceType } from '../../hooks/useDeviceType.tsx'
 
 function Layout() {
-	const { isMobile } = useDeviceType()
+	const { isDesktop } = useDeviceType()
 
 	return (
 		<div className={styles.layout}>
-			{isMobile ? (
+			{!isDesktop ? (
 				<div className={styles.mobileContainer}>
 					<p>
 						Please open on a desktop, as the mobile version is still in
