@@ -35,7 +35,11 @@ const Contacts = () => {
 				>
 					<FaGithub />
 				</a>
-				<a href='mailto:aleksanyan180286@gmail.com' title='Gmail'>
+				<a
+					href='mailto:aleksanyan180286@gmail.com'
+					title='Gmail'
+					target='_blank'
+				>
 					<FaEnvelope />
 				</a>
 				<a href='tel:+37494677886' title='Phone'>
