@@ -12,7 +12,7 @@ const Contacts = () => {
 		<>
 			<div className={styles.socialIcons}>
 				<a
-					href='https://t.me/yourtelegram'
+					href='https://t.me/AlekSanyan18'
 					target='_blank'
 					rel='noopener noreferrer'
 					title='Telegram'
@@ -20,7 +20,7 @@ const Contacts = () => {
 					<FaTelegramPlane />
 				</a>
 				<a
-					href='https://linkedin.com/in/yourlinkedin'
+					href='https://www.linkedin.com/in/arpine-aleks%D0%B0nian-3716a0307/'
 					target='_blank'
 					rel='noopener noreferrer'
 					title='LinkedIn'
@@ -28,17 +28,17 @@ const Contacts = () => {
 					<FaLinkedin />
 				</a>
 				<a
-					href='https://github.com/yourgithub'
+					href='https://github.com/ArpaDev18'
 					target='_blank'
 					rel='noopener noreferrer'
 					title='GitHub'
 				>
 					<FaGithub />
 				</a>
-				<a href='mailto:youremail@gmail.com' title='Gmail'>
+				<a href='mailto:aleksanyan180286@gmail.com' title='Gmail'>
 					<FaEnvelope />
 				</a>
-				<a href='tel:+1234567890' title='Phone'>
+				<a href='tel:+37494677886' title='Phone'>
 					<FaPhoneAlt />
 				</a>
 			</div>
