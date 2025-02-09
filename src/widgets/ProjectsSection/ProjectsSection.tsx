@@ -45,10 +45,10 @@ const ProjectsSection: React.FC = () => {
 			<h2>Latest Projects</h2>
 
 			<div className={styles.projectsContainer}>
-				<div className={styles.sliderControls}>
-					<button onClick={() => handleScroll('left')}>◀</button>
-					<button onClick={() => handleScroll('right')}>▶</button>
-				</div>
+				{/*<div className={styles.sliderControls}>*/}
+				{/*	<button onClick={() => handleScroll('left')}>◀</button>*/}
+				{/*	<button onClick={() => handleScroll('right')}>▶</button>*/}
+				{/*</div>*/}
 
 				<div className={styles.grid} ref={sliderRef}>
 					{PROJECTS.map(project => (
