@@ -127,3 +127,11 @@
     transform: rotate(-5deg);
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    left: 15%;
+  }
+}
+

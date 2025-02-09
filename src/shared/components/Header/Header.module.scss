@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 32px;
+  padding: 24px 32px;
   background-color: $dark-bg;
   border-bottom: 2px solid $primary-color;
 
@@ -36,6 +36,68 @@
         background-color: $white;
         color: black;
       }
+    }
+  }
+
+  .burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 100;
+
+    span {
+      width: 30px;
+      height: 4px;
+      background-color: $white;
+      transition: 0.3s ease;
+    }
+  }
+
+  .burger.open {
+    span:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px;
+
+    .burger {
+      display: flex;
+    }
+
+    .nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: $dark-bg;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 0;
+      display: none;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .nav.open {
+      display: flex;
+      padding: 16px 20px;
+    }
+
+    button {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
     }
   }
 }

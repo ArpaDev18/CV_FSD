@@ -1,22 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './SkillsSection.module.scss'
-
-const skills = [
-	'React.js',
-	'Next.js',
-	'Stencil.js',
-	'GraphQL/Apollo',
-	'Node.js',
-	'CRM',
-	'JEST',
-	'GIT',
-	'FSD',
-	'WEB CORE VITALS'
-]
+import { SKILLS } from '../../shared/constants/common.ts'
 
 const SkillsSection: React.FC = () => {
 	const [isVisible, setIsVisible] = useState(false)
 	const sectionRef = useRef<HTMLElement>(null)
+	const sliderRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -36,6 +25,16 @@ const SkillsSection: React.FC = () => {
 		return () => observer.disconnect()
 	}, [])
 
+	const handleScroll = (direction: 'left' | 'right') => {
+		if (sliderRef.current) {
+			const scrollAmount = 200
+			sliderRef.current.scrollBy({
+				left: direction === 'right' ? scrollAmount : -scrollAmount,
+				behavior: 'smooth'
+			})
+		}
+	}
+
 	return (
 		<section
 			ref={sectionRef}
@@ -44,12 +43,20 @@ const SkillsSection: React.FC = () => {
 		>
 			<h2>Skills & Expertise</h2>
 			<p>Technologies I work with:</p>
-			<div className={styles.skillsList}>
-				{skills.map((skill, index) => (
-					<span key={index} className={styles.skillBadge}>
-						{skill}
-					</span>
-				))}
+
+			<div className={styles.skillsContainer}>
+				<div className={styles.sliderControls} style={{ display: 'none' }}>
+					<button onClick={() => handleScroll('left')}>◀</button>
+					<button onClick={() => handleScroll('right')}>▶</button>
+				</div>
+
+				<div className={styles.skillsList} ref={sliderRef}>
+					{SKILLS.map((skill, index) => (
+						<span key={index} className={styles.skillBadge}>
+							{skill}
+						</span>
+					))}
+				</div>
 			</div>
 		</section>
 	)

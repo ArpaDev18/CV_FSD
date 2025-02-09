@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styles from './ProjectsSection.module.scss'
-import { useAppearance } from '../../shared/hooks/useAppearance.tsx'
 import { scrollToElement } from '../../shared/utils/scroll.ts'
 import { PROJECTS } from '../../shared/constants/common.ts'
 
 const ProjectsSection: React.FC = () => {
-	const { sectionRef, isVisible } = useAppearance()
+	const [isVisible, setIsVisible] = useState(false)
+	const sectionRef = useRef<HTMLElement>(null)
+	const sliderRef = useRef<HTMLDivElement>(null)
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				if (entry.isIntersecting) {
+					setIsVisible(true)
+					observer.disconnect()
+				}
+			},
+			{ threshold: 0.6 }
+		)
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current)
+		}
+
+		return () => observer.disconnect()
+	}, [])
+
+	const handleScroll = (direction: 'left' | 'right') => {
+		if (sliderRef.current) {
+			const scrollAmount = 300
+			sliderRef.current.scrollBy({
+				left: direction === 'right' ? scrollAmount : -scrollAmount,
+				behavior: 'smooth'
+			})
+		}
+	}
 
 	return (
 		<section
@@ -14,26 +43,35 @@ const ProjectsSection: React.FC = () => {
 			id='projects'
 		>
 			<h2>Latest Projects</h2>
-			<div className={styles.grid}>
-				{PROJECTS.map(project => (
-					<div
-						key={project.id}
-						className={styles.projectCard}
-						onClick={() => scrollToElement(project.name)}
-					>
-						<img src={project.image} alt={project.title} />
-						<div className={styles.overlay}>
-							<h3>{project.title}</h3>
+
+			<div className={styles.projectsContainer}>
+				<div className={styles.sliderControls}>
+					<button onClick={() => handleScroll('left')}>◀</button>
+					<button onClick={() => handleScroll('right')}>▶</button>
+				</div>
+
+				<div className={styles.grid} ref={sliderRef}>
+					{PROJECTS.map(project => (
+						<div
+							key={project.id}
+							className={styles.projectCard}
+							onClick={() => scrollToElement(project.name)}
+						>
+							<img src={project.image} alt={project.title} />
+							<div className={styles.overlay}>
+								<h3>{project.title}</h3>
+							</div>
 						</div>
-					</div>
-				))}
-				<button
-					className={styles.viewAllButton}
-					onClick={() => scrollToElement('experience')}
-				>
-					View all projects
-				</button>
+					))}
+				</div>
 			</div>
+
+			<button
+				className={styles.viewAllButton}
+				onClick={() => scrollToElement('experience')}
+			>
+				View all projects
+			</button>
 		</section>
 	)
 }

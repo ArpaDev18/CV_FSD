@@ -9,24 +9,15 @@ function Layout() {
 	const { isDesktop } = useDeviceType()
 
 	return (
-		<div className={styles.layout}>
-			{!isDesktop ? (
-				<div className={styles.mobileContainer}>
-					<p>
-						Please open on a desktop, as the mobile version is still in
-						progress.
-					</p>
-				</div>
-			) : (
-				<>
-					<DownloadButton />
-					<Header />
-					<main>
-						<Outlet />
-					</main>
-					<Footer />
-				</>
-			)}
+		<div
+			className={`${styles.layout} ${!isDesktop ? styles.mobilePadding : ''}`}
+		>
+			<DownloadButton />
+			<Header />
+			<main>
+				<Outlet />
+			</main>
+			<Footer />
 		</div>
 	)
 }

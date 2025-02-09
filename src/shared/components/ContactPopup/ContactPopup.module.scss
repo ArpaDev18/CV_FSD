@@ -45,6 +45,13 @@ h2 {
   }
 }
 
+@media (max-width: 768px) {
+  .closeButton {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
 .socialIcons {
   display: flex;
   justify-content: center;

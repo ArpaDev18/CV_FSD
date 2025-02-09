@@ -80,4 +80,58 @@
     font-size: 18px;
     font-weight: 500;
   }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+
+    .header {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      max-width: 100%;
+      padding: 0 10px;
+    }
+
+    .item {
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+
+    .number {
+      font-size: 20px;
+    }
+
+    .title {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 50px 16px;
+
+    .header h2 {
+      font-size: 24px;
+    }
+
+    .exploreButton {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+
+    .grid {
+      gap: 15px;
+    }
+
+    .number {
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 14px;
+    }
+  }
 }

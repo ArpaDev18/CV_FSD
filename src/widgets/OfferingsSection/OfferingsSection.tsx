@@ -1,14 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import styles from './OfferingsSection.module.scss'
-
-const offerings = [
-	{ id: '01', title: 'Frontend Development' },
-	{ id: '02', title: 'Performance Optimization' },
-	{ id: '03', title: 'Scalable Architecture' },
-	{ id: '04', title: 'Micro Frontends' },
-	{ id: '05', title: 'Code Quality & Testing' },
-	{ id: '06', title: 'CI/CD & Automation' }
-]
+import { OFFERINGS } from '../../shared/constants/common.ts'
 
 const OfferingsSection: React.FC = () => {
 	const [isVisible, setIsVisible] = useState(false)
@@ -50,7 +42,7 @@ const OfferingsSection: React.FC = () => {
 				</button>
 			</div>
 			<div className={styles.grid}>
-				{offerings.map(offering => (
+				{OFFERINGS.map(offering => (
 					<div key={offering.id} className={styles.item}>
 						<span className={styles.number}>{offering.id}</span>
 						<span className={styles.title}>{offering.title}</span>

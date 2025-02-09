@@ -103,4 +103,104 @@
       color: #bbb;
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    .experienceList {
+      gap: 16px;
+    }
+
+    .experienceCard {
+      padding: 20px;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    .role {
+      font-size: 16px;
+    }
+
+    .responsibilities {
+      padding-left: 15px;
+
+      li {
+        font-size: 14px;
+      }
+    }
+
+    .technologies {
+      font-size: 14px;
+    }
+
+    .projects {
+      padding: 12px;
+    }
+
+    .projectCard {
+      padding: 10px;
+
+      h5 {
+        font-size: 16px;
+      }
+
+      .projectTech {
+        font-size: 13px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 50px 16px;
+
+    h2 {
+      font-size: 26px;
+    }
+
+    .experienceCard {
+      padding: 16px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    .role {
+      font-size: 14px;
+    }
+
+    .responsibilities {
+      padding-left: 12px;
+
+      li {
+        font-size: 13px;
+      }
+    }
+
+    .technologies {
+      font-size: 13px;
+    }
+
+    .projects {
+      padding: 10px;
+    }
+
+    .projectCard {
+      padding: 8px;
+
+      h5 {
+        font-size: 14px;
+      }
+
+      .projectTech {
+        font-size: 12px;
+      }
+    }
+  }
 }

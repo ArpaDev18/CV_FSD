@@ -137,3 +137,25 @@ export const WORK_EXPERIENCE = [
 export const TELEGRAM_BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN || ''
 export const TELEGRAM_CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID || ''
 export const telegramApiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+
+export const SKILLS = [
+	'React.js',
+	'Next.js',
+	'Stencil.js',
+	'GraphQL/Apollo',
+	'Node.js',
+	'CRM',
+	'JEST',
+	'GIT',
+	'FSD',
+	'WEB CORE VITALS'
+]
+
+export const OFFERINGS = [
+	{ id: '01', title: 'Frontend Development' },
+	{ id: '02', title: 'Performance Optimization' },
+	{ id: '03', title: 'Scalable Architecture' },
+	{ id: '04', title: 'Micro Frontends' },
+	{ id: '05', title: 'Code Quality & Testing' },
+	{ id: '06', title: 'CI/CD & Automation' }
+]

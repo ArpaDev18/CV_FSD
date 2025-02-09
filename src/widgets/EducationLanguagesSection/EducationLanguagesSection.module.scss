@@ -112,4 +112,61 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+
+    h2 {
+      font-size: 30px;
+    }
+
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .education, .languages {
+      padding: 20px;
+    }
+
+    .educationCard h4 {
+      font-size: 18px;
+    }
+
+    .educationCard p {
+      font-size: 15px;
+    }
+
+    .languages ul li {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 50px 16px;
+
+    h2 {
+      font-size: 26px;
+    }
+
+    .grid {
+      gap: 16px;
+    }
+
+    .education, .languages {
+      padding: 16px;
+    }
+
+    .educationCard h4 {
+      font-size: 16px;
+    }
+
+    .educationCard p {
+      font-size: 14px;
+    }
+
+    .languages ul li {
+      font-size: 14px;
+    }
+  }
 }
