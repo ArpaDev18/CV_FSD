@@ -11,7 +11,7 @@ import ContactButton from '../../shared/components/ContactButton/ContactButton.t
 function Home() {
 	return (
 		<div id='home'>
-			<div style={{ height: '100px' }}></div>
+			<div style={{ height: '100px', backgroundColor: 'black' }}></div>
 			<section className={styles.mainSection}>
 				<div className={styles.content}>
 					<div className={styles.text}>
